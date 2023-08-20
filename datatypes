@@ -1,0 +1,27 @@
+
+String? val;
+void main() {
+  int a;
+  double A;
+  num b = 234.4;
+  print("the value is : ${b}");
+  final String B= "sdaf";
+  const bool c = true;
+  dynamic d =32;
+  d = "32";
+//   dynamic can change data type in between
+  var v = "23";
+//   v = 23;
+//   var can't change data type in between
+  final v1 = 10;
+  const v2 = 20;
+  final va1 = DateTime.now(); // final is a run time constant
+  //const va2 = DateTime.now(); // const is a compile time constant
+  
+  String? e = null;
+  
+//   e = "karthi kayan R";
+  print(e?.length??0);
+  //working like a conditional operator
+  
+}
