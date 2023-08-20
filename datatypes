@@ -5,6 +5,7 @@ void main() {
   double A;
   num b = 234.4;
   print("the value is : ${b}");
+  print("the value is : $b");
   final String B= "sdaf";
   const bool c = true;
   dynamic d =32;
