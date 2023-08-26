@@ -1,0 +1,17 @@
+void main() {
+  Arr arr = Arr();
+  arr.pre();
+}
+mixin values{
+  int a = 23;
+}
+
+mixin valuesOfBool{
+  bool va = true;
+}
+class Arr with values, valuesOfBool{
+  void pre(){
+    print(a);
+    print(va);
+  }
+}
