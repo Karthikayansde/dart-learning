@@ -1,0 +1,21 @@
+void main(){
+  Vehicle v = Car();
+  (v as Car).name();
+}
+
+class Vehicle{
+  int speed = 10;
+}
+class Car extends Vehicle{
+  int noOfWheels = 4;
+  void name(){
+    print("car");
+  }
+}
+class Truck extends Vehicle{
+  int noOfWheels = 8;
+  void nameT(){
+    print("truck");
+  }
+}
+// we can override like java
