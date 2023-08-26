@@ -1,0 +1,37 @@
+void main(){
+}
+
+abstract class Vehicle{
+  int speed = 10;
+  void fun();
+  void pre(){
+    print("hi");
+  }
+}
+class Car implements Vehicle{
+  int noOfWheels = 4;
+  void name(){
+    print("car");
+  }
+
+  @override
+  int speed = 4;
+  
+  @override
+  void fun() {
+    // TODO: implement fun
+  }
+
+  @override
+  void pre() {
+    // TODO: implement pre
+  }
+
+}
+class Truck extends Vehicle{
+  @override
+  void fun() {
+    // TODO: implement fun
+  }
+  
+}
