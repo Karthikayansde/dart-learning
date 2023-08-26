@@ -1,5 +1,5 @@
 void main() {
-  Cl1 cl = Cl1("kaya",23);
+  dynamic cl = Cl1("kaya",23);
   print((cl.id)??"its null");
 }
 
