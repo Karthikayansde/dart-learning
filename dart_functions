@@ -1,0 +1,49 @@
+// functions
+//   * narmal funtions
+//   * optional positional parameters
+//   * return 2 are more values
+//   * optional return type
+//   * named arg (it will be required or nullable($))
+//   * return named arg
+
+void main() {
+  kar k = kar();
+  k.vadr(99);
+  //   * return 2 are more values
+  var re2val = k.return2val();
+  print(re2val.$2);
+  var (name,id) = k.return2val();
+  print(name);
+  //   * named arg (it will be required or nullable($))
+  k.va(20,val1: "karthi");
+  //   * return named arg
+  var an = k.returnNamedArg();
+  print(an.val);
+  
+}
+class kar{
+  //   * optional positional parameters
+  void vadr(int val,[String? vall] ){
+    print(vall??"its null");
+  }
+  
+  //   * return 2 are more values
+  (String , int) return2val(){
+    return ("karthi", 29);
+  }
+  
+  //   * optional return type
+  String? returnORnot(){
+    return null;
+  }
+  
+  //   * named arg (it will be required or nullable($))
+  void va(int val, {required String val1, int? hi}){
+    print("$val == $val1 == $hi");
+  }
+  
+  //   * return named arg
+  ({String val,int id}) returnNamedArg(){
+    return (val: "String is",id: 45);
+  }
+}
