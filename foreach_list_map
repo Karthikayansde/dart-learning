@@ -1,0 +1,11 @@
+void main(){
+  var ars = [23,45,"kaya"];
+  var mas = {"kayan":20,"an":50};
+  for(var na in ars){
+    print(na);
+  }
+  var ls = mas.keys;
+  for(var na in ls){
+    print(mas[na]);
+  }
+}
