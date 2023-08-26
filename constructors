@@ -1,0 +1,27 @@
+void main() {
+  Cl1 cl = Cl1("kaya",23);
+  print((cl.id)??"its null");
+}
+
+class Cl1{
+  String? val;
+  int? id;
+  Cl1(String? val, int? id){
+    this.val = val;
+    this.id = id;
+  }
+}
+
+class Cl2{
+  String? val;
+  int? id;
+  Cl2(this.val, this.id);
+}
+
+// named constructor
+class Cl3{
+  int? id;
+  Cl3.namedCon(){
+    id = 80;
+  }
+}
