@@ -1,0 +1,34 @@
+void main(){
+  // classes
+  val1().cooling();
+  val2.cooling();
+  val3(name: "karthi",id: 29);
+  //access modifiers
+  //*public and private
+  
+  
+}
+// classes
+class val1{
+  void cooling(){
+    print("val1");
+  }
+}
+
+class val2{
+  static void cooling(){
+    print("val2");
+  }
+}
+
+class val3{
+  var _val = 32;
+  final String name;
+  final int? id;
+  val3({required this.name, this.id}){
+    printe();
+  }
+  void printe(){
+    print("id is $id and name is : $name");
+  }
+}
