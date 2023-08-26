@@ -3,7 +3,7 @@ String? val;
 void main() {
   int a;
   double A;
-  num b = 234.4;
+  num b = 234.4; // both int and double
   print("the value is : ${b}");
   print("the value is : $b");
   final String B= "sdaf";
