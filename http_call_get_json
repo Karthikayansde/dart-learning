@@ -1,0 +1,11 @@
+// references:
+// https://jsonplaceholder.typicode.com/users
+// https://pub.dev/packages/http
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+void main() async{
+  var url = Uri.https("jsonplaceholder.typicode.com","users");
+  var res = await http.get(url);
+//   print(res.body);
+  print(jsonDecode(res.body)[0]['name']);
+}
