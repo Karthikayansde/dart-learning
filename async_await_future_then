@@ -1,0 +1,13 @@
+void main() async {
+  timeD().then((valu){
+    print("from first $valu");
+  });
+  print("hhhhhhhhhhhhhhhhhh");
+  final val = await timeD();
+  print(val);
+}
+Future<String> timeD(){
+  return Future.delayed(Duration(seconds: 5), (){
+    return "kaya";
+  });
+}
