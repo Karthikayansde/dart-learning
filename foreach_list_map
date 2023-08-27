@@ -12,4 +12,22 @@ void main(){
   mas.forEach((key, val){
     print("$key : $val");
   });
+  
+  List<Map<int,int>> val = [
+    {
+      12:23,
+      34:56,
+      46:59
+    },
+    {
+      12:23,
+      34:56,
+      46:59
+    }
+  ];
+  val.map((e){
+    e.forEach((key,val){
+      print('$key val is : $val');
+    });
+  }).toList();
 }
