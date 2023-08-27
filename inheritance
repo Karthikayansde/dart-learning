@@ -3,7 +3,7 @@ void main(){
   if(v is Car){
     v.name();             // with out casting
   }
-  else if(v is Truck){
+  else if(v is Truck){    // is = v.runTimeType == Truck
     (v as Truck).nameT(); // with casting
   }
 }
