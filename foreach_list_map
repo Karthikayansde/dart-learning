@@ -8,4 +8,8 @@ void main(){
   for(var na in ls){
     print(mas[na]);
   }
+  
+  mas.forEach((key, val){
+    print("$key : $val");
+  });
 }
