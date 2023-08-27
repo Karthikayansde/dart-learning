@@ -1,0 +1,18 @@
+void main(){
+  Myenum me = Myenum.swe;
+  switch(me){
+    case Myenum.sde:
+      print("its sde");
+      print(Myenum.sde.salary);
+      break;
+    case Myenum.swe:
+      print("its swe");
+      print(Myenum.swe.salary);
+      break;
+  }
+}
+enum Myenum{
+  sde(232323),swe(2030303);
+  final int salary;
+  const Myenum(this.salary);
+}
