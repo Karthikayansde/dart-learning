@@ -1,0 +1,11 @@
+void main() {
+  Name<String , int> na = Name("karthi", 29);
+}
+class Name<T,E>{
+  final T nam;
+  E id;
+  Name(this.nam, this.id){
+    print(nam.runtimeType);
+    print(id);
+  }
+}
