@@ -1,6 +1,11 @@
 void main(){
-  Vehicle v = Car();
-  (v as Car).name();
+  Vehicle v = Truck();
+  if(v is Car){
+    v.name();             // with out casting
+  }
+  else if(v is Truck){
+    (v as Truck).nameT(); // with casting
+  }
 }
 
 class Vehicle{
