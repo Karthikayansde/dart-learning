@@ -1,0 +1,16 @@
+void main(){
+  try {
+    print(10~/0);
+  } on FormatException catch(e){
+    print("this is from fe");
+    print(e);
+  } on Exception catch(c){
+    print("this is from e");
+    print(c);
+  } catch(b){
+    print("this is from c");
+    print(b);
+  } finally {
+    print("this is finally");
+  }
+}
