@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
+  // final val = Color.fromRGBO(255, 0, 0, 1);
+  @override
+  Widget build(BuildContext context) {
+    final val = const OutlineInputBorder(
+      // Color(0xAARRGGBB)
+      borderSide: BorderSide(
+        width: 10.0,
+        style: BorderStyle.solid,
+      ),
+    );
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              '0',
+              style: TextStyle(
+                fontSize: 55,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+            ),
+            TextField(
+              style: const TextStyle(
+                color: Colors.black,
+              ),
+              decoration: InputDecoration(
+                hintText: 'Please enter the amount in USD',
+                hintStyle: const TextStyle(
+                  color: Colors.black,
+                ),
+                filled: true,
+                fillColor: Colors.white,
+                focusedBorder: val,
+                enabledBorder: val,
+                // OutlineInputBorder
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
