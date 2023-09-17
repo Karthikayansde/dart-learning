@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+void main() {
+  runApp(GetMaterialApp(
+    // routes: {
+    // '/second': (context) => const SecondScreen(),
+    // },
+    home: MyApp(),
+  ));
+}
+class GetMyControl extends GetxController {
+  int val = 0;
+
+  void upd() {
+    val++;
+    update(['cont1']);  // we can set condition on this
+  }
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final mycontrol = Get.put(GetMyControl());
+    return Scaffold(
+      body: Column(
+        children: [
+          // Obx(() => Text("kayan${controller.val}")),
+          GetBuilder<GetMyControl>(
+              id: 'cont1',
+              init: GetMyControl(),
+              builder: (controller1) {
+                return Text('the : ${controller1.val}');
+              }),
+          GetBuilder<GetMyControl>(builder: (controller2) {
+            return Text('the : ${controller2.val}');
+          }),
+          ElevatedButton(
+            onPressed: () => Get.find<GetMyControl>().upd(),
+            child: Text("kaya"),
+          ),
+        ],
+      ),
+    );
+  }
+}
