@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mycontrol = Get.put(GetMyControl());
+    //final mycontrol = Get.put(GetMyControl());
     return Scaffold(
       body: Column(
         children: [
