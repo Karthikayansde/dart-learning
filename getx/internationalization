@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+void main() {
+  runApp(GetMaterialApp(
+    translations: Messages(),
+    locale: const Locale('en', 'US'),
+    fallbackLocale: const Locale('en', 'US'),
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
+  final messagesController = Get.put(MessagesController());
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Text('hello'.tr),
+          Text('logged_in'.trParams({'name': 'karthi', 'email': 'karthikayansde@gmail.com'})),
+          ElevatedButton(
+              onPressed: () {
+                messagesController.changeLanguage('en', 'US');
+              },
+              child: Text('english')),
+          ElevatedButton(
+              onPressed: () {
+                messagesController.changeLanguage('es', 'ES');
+              },
+              child: Text('spanish')),
+        ],
+      ),
+    );
+  }
+}
+
+class Messages extends Translations {
+  @override
+  // TODO: implement keys
+  Map<String, Map<String, String>> get keys {
+    Map<String, Map<String, String>> val = {
+      'en_US': {'hello': 'hello', 'logged_in': 'logged in as @name \n email: @email'},
+      'es_ES': {'hello': 'hola', 'logged_in': 'iniciado sesion como @name \n email: @email'},
+    };
+    return val;
+  }
+}
+
+class MessagesController extends GetxController {
+  void changeLanguage(String languageCode, String countryCode) {
+    var locale = Locale(languageCode, countryCode);
+    Get.updateLocale(locale);
+  }
+}
