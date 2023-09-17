@@ -56,3 +56,75 @@ class MessagesController extends GetxController {
     Get.updateLocale(locale);
   }
 }
+
+//chatgpt code
+
+//save it as json file
+{
+  "title": "My App",
+  "welcome_message": "Welcome to my app!",
+  "button_text": "Click me"
+}
+{
+  "title": "Mi Aplicación",
+  "welcome_message": "¡Bienvenido a mi aplicación!",
+  "button_text": "Haz clic"
+}
+
+//
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'screens/home.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'My App',
+      translations: {
+        'en_US': {'title': 'en.json', 'welcome_message': 'en.json', 'button_text': 'en.json'},
+        'es_ES': {'title': 'es.json', 'welcome_message': 'es.json', 'button_text': 'es.json'},
+      },
+      locale: Locale('en', 'US'), // Set initial locale
+      fallbackLocale: Locale('en', 'US'), // Set fallback locale
+      home: HomeScreen(),
+    );
+  }
+}
+//
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Map<String, dynamic> translations = Get.find(); // Get the translations
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(translations['title']),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(translations['welcome_message']),
+            ElevatedButton(
+              onPressed: () {
+                // Change the locale to Spanish
+                Get.updateLocale(Locale('es', 'ES'));    //important line
+              },
+              child: Text(translations['button_text']),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
