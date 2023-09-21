@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  Future<String> fetchData() async {
+    // Simulating a network request with a delay
+    await Future.delayed(Duration(seconds: 5));
+
+    // Simulating data retrieval
+    return "Hello, Flutter!";
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Future Builder Example"),
+      ),
+      body: Center(
+        child: FutureBuilder<String>(
+          future: fetchData(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // If the Future is still running, display a loading indicator.
+              return CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              // If there's an error, display an error message.
+              return Text("Error: ${snapshot.error}");
+            } else {
+              // If the Future has completed successfully, display the data.
+              return Text("Data: ${snapshot.data}");
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
